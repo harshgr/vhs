@@ -1,0 +1,53 @@
+<%= form_for :user, url: users_path do |f| %>
+  <p>
+    <%= f.label :Username %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :Email%><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :Password %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :Conferm,"Password" %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :First,"Name" %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :Last,"Name" %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :Date,"Of","Birth" %><br>
+    <%= f.text_field :text %>
+  </p>
+   <p>
+    <%= f.label :Mobile %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :uid %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :Gender %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_area :text %>
+  </p>
+  <p>
+    <%= f.label :city %><br>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
