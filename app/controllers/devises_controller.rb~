@@ -19,7 +19,7 @@ class DevisesController < Devise::RegistrationsController
   end
 
 end
-frefgrew
+
 
 
 

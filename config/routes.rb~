@@ -18,7 +18,7 @@ Vhs::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
      resources :users
 	
-	     resources :bookings
+    resources :bookings
 	
 
   # Example resource route with options:

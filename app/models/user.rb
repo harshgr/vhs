@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
  #   attr_accessible :email, :password, :password_confirmation
 
 	  has_many :booking, dependent: :destroy
+	  has_many :car , through: :booking
 end
