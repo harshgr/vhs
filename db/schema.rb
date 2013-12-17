@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216070342) do
+ActiveRecord::Schema.define(version: 20131216141917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: true do |t|
-    t.string   "no_of_seates"
+    t.integer  "no_of_seates"
     t.string   "pick_up_location"
     t.time     "pick_up_time"
     t.string   "drop_location"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20131216070342) do
     t.integer  "no_of_days"
     t.integer  "price"
     t.integer  "user_id"
+    t.integer  "car_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cars", force: true do |t|
+    t.string   "title"
+    t.integer  "no_of_seates"
+    t.string   "image"
+    t.integer  "milage"
+    t.string   "registration_no"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

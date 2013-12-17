@@ -4,13 +4,13 @@
    
 
   <div><%= f.label :no_of_seates,"No. of seates" %><br />
-  <%= f.select :no_of_seates, [['3-Seator','3_seator'],['4-Seator','4_seator'],['5-Seator','5_seator'],['6-Seator','6_seator'],['7-Seator','7_seator'],['8-Seator','8_seator'],['10-Seator','10_seator']] , :autofocus=> true, :required => true %>
+  <%= f.select :no_of_seates, [['3-Seator', 3 ],['4-Seator',4],['5-Seator',5],['6-Seator',6],['7-Seator',7],['8-Seator',8],['10-Seator',10]] , :autofocus=> true, :required => true %>
 
   <div><%= f.label :pick_up_location,"Pick-up location" %><br />
   <%= f.text_field :pick_up_location, :autofocus=> true , :required => true%></div>
 
   <div><%= f.label :pick_up_time,"Pick-up time" %><br />
-  <%= f.text_field :pick_up_time, :autofocus=> true , :required => true%></div>
+  <%= f.time_field :pick_up_time, :autofocus=> true , :required => true%></div>
   
   <div><%= f.label :drop_location,"Drop location" %><br />
   <%= f.text_field :drop_location, :autofocus=> true , :required => true%></div>  
@@ -25,8 +25,7 @@
   <%= f.text_field :price, :autofocus=> true ,:required => true %></div>
 
   <div><%= f.submit %></div>
-<%= f.submit %>
   
 <% end %>
 
-<%= render "devise/shared/links" %>
+

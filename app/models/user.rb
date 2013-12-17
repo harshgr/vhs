@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
  #   attr_accessible :email, :password, :password_confirmation
 
-	  has_many :booking, dependent: :destroy
-	  has_many :car , through: :booking
+	  has_many :bookings, dependent: :destroy
+	  has_many :cars , through: :bookings
 end
