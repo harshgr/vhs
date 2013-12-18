@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-
+before_filter :authenticate_user!
   def new
     @car = Car.new
   end
@@ -37,7 +37,7 @@ class CarsController < ApplicationController
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
-    redirect_to car_path
+    redirect_to cars_path
   end
 
 

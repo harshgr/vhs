@@ -1,0 +1,28 @@
+<h2> Show Car Details </h2>
+<table class="table table-striped">
+  <tr>
+    <th>Title</th><th></th>
+    <th>No. of seates</th><th></th>
+    <th>Image</th><th></th>
+    <th>Milage</th><th></th>
+    <th>Registration no</th><th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @cars.each do |car| %>
+  <tr>
+    <td><%= car.title %></td><th></th>
+    <td><%= car.no_of_seates %></td><th></th>
+    <td><%= car.image %></td><th></th>
+    <td><%= car.milage %></td><th></th>
+    <td><%= car.registration_no %></td><th></th>
+   	
+    <td><%= link_to 'Show', car_path(car) %></td>
+    <td><%= link_to 'Edit', edit_car_path(car) %></td>
+    <td><%= link_to 'Delete', car_path(car), method: :delete, data:{confirm: 'Are you sure!'} %> </td>
+    
+  </tr>
+<% end %>
+</table>

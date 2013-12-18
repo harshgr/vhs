@@ -1,0 +1,36 @@
+<h2>Show Car</h2>
+<table class="table table-striped">
+
+<tr>
+<td>  <strong>Title:</strong></td>
+<td>  <%= @car.title %></td>
+</tr> 
+
+<tr>
+<td>  <strong>No. of seates:</strong></td>
+<td>  <%= @car.no_of_seates %></td>
+</tr>
+
+<tr>
+<td>  <strong>Image:</strong></td>
+<td>  <%= @car.image %></td>
+</tr>
+ 
+<tr>
+<td>  <strong>Milage:</strong></td>
+<td>  <%= @car.milage %></td>
+</tr>
+
+<tr>
+<td>  <strong>Registration no:</strong></td>
+<td>  <%= @car.registration_no %></td>
+</tr>
+</table>
+<table>
+<tr>
+<td><%= link_to "Car Details", cars_path  %></td><td><th></th><th></th><th></th>
+<td><%= link_to "New Car", new_car_path  %></td>
+</tr>
+</table> 
+
+

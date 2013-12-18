@@ -6,6 +6,12 @@
   <div><%= f.label :no_of_seates,"No. of seates" %><br />
   <%= f.select :no_of_seates, [['3-Seator', 3 ],['4-Seator',4],['5-Seator',5],['6-Seator',6],['7-Seator',7],['8-Seator',8],['10-Seator',10]] , :autofocus=> true, :required => true %>
 
+  <div><%= f.label :pick_up_date,"Pickup Date" %><br />
+  <%= f.date_field :pick_up_date, :autofocus=> true , :required => true%></div> 
+
+  <div><%= f.label :drop_date,"Drop Date" %><br />
+  <%= f.date_field :drop_date, :autofocus=> true , :required => true%></div>   
+
   <div><%= f.label :pick_up_location,"Pick-up location" %><br />
   <%= f.text_field :pick_up_location, :autofocus=> true , :required => true%></div>
 
@@ -14,15 +20,6 @@
   
   <div><%= f.label :drop_location,"Drop location" %><br />
   <%= f.text_field :drop_location, :autofocus=> true , :required => true%></div>  
-
-  <div><%= f.label :date_of_booking,"Date of booking" %><br />
-  <%= f.date_field :date_of_booking, :autofocus=> true , :required => true%></div> 
-
-  <div><%= f.label :no_of_days,"No. of days" %><br />
-  <%= f.text_field :no_of_days, :autofocus=> true , :required => true%></div> 
-
-  <div><%= f.label :price%><br />
-  <%= f.text_field :price, :autofocus=> true ,:required => true %></div>
 
   <div><%= f.submit %></div>
   
