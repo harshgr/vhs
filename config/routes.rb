@@ -20,7 +20,15 @@ Vhs::Application.routes.draw do
 	
   resources :bookings
 	
-  resources :cars
+  resources :cars do 
+  collection do
+    get :search_vehicle
+    post :available_vehicles
+  end
+end                     
+
+
+
   # Example resource route with options:
   #   resources :products do
   #     member do

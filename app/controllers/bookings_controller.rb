@@ -5,12 +5,9 @@ before_filter :authenticate_user!
     @booking = Booking.new
   end
  
-       
-
   def create
  
   @booking = Booking.new(booking_params) 
-  @booking = 
   if @booking.save
     redirect_to @booking
   else
@@ -32,6 +29,13 @@ before_filter :authenticate_user!
     redirect_to bookings_path
   end
 
+#  def search_vehicle
+  #  if Booking.where("pick_up_date..drop_date AND no_of_seates ",{ params[:pick_up_date], params[:drop_date], params[:no_of_seates] })  
+  #  render 'bookings/not_avaliable.html.erb'
+  #   else
+  #  render 'bookings/search_hvechile.html.erb'
+  # end
+# end
 
   private
   def booking_params

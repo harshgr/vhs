@@ -40,10 +40,24 @@ before_filter :authenticate_user!
     redirect_to cars_path
   end
 
+  def search_vehicle
+
+  end 
+
+  def available_vehicles
+  
+  @sv = Booking.where(pick_up_date: params[:search][:pick_up_date].. params[:search][:drop_date] and drop_date: params[:search][:drop_date].. params[:search][:drop_date])
+ 
+  #@sv = Booking.where("no_of_seates = ?", params[:search])  
+  render :json => @sv
+  end
 
   private
   def car_params
     params.require(:car).permit(:title, :no_of_seates, :image, :milage, :registration_no)
   end
+
+	
+
 
 end
