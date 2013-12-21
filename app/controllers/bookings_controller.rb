@@ -3,16 +3,16 @@ before_filter :authenticate_user!
 
   def new
     @booking = Booking.new
+    @car = Car.find(params[:car_id]) 
   end
  
   def create
- 
-  @booking = Booking.new(booking_params) 
-  if @booking.save
-    redirect_to @booking
-  else
-    render 'new'
-  end
+    @booking = current_user.bookings.new(booking_params) 
+    if @booking.save 
+      redirect_to @booking
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -37,9 +37,9 @@ before_filter :authenticate_user!
   # end
 # end
 
-  private
+  private 
   def booking_params
-    params.require(:booking).permit(:no_of_seates, :pick_up_date, :drop_date, :pick_up_location, :pick_up_time, :drop_location)
+    params.require(:booking).permit(:no_of_seates, :pick_up_date, :car_id, :drop_date, :pick_up_location, :pick_up_time, :drop_location)
   end
   
 end

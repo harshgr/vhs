@@ -6,8 +6,9 @@ before_filter :authenticate_user!
 
   def create
     @car = Car.new(car_params)
-	if @car.save
-	redirect_to @car
+      if @car.save
+	# @ar = @car.bookings.create
+        redirect_to @car
 	else
 	render 'new'
 	end
@@ -45,11 +46,10 @@ before_filter :authenticate_user!
   end 
 
   def available_vehicles
-  
-  @sv = Booking.where(pick_up_date: params[:search][:pick_up_date].. params[:search][:drop_date] and drop_date: params[:search][:drop_date].. params[:search][:drop_date])
  
-  #@sv = Booking.where("no_of_seates = ?", params[:search])  
-  render :json => @sv
+  @available_vehicles = Car.all
+  #render :json => @available_vehicles
+  render '_form.html.erb' 
   end
 
   private
