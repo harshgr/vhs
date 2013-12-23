@@ -5,9 +5,10 @@ before_filter :authenticate_user!
   end
 
   def create
-    @car = Car.new(car_params)
-      if @car.save
-	# @ar = @car.bookings.create
+    @car = Car.new(car_params) 
+   
+    if @car.save
+	 
         redirect_to @car
 	else
 	render 'new'
@@ -46,10 +47,9 @@ before_filter :authenticate_user!
   end 
 
   def available_vehicles
- 
   @available_vehicles = Car.all
   #render :json => @available_vehicles
-  render '_form.html.erb' 
+  render :partial => "car"
   end
 
   private

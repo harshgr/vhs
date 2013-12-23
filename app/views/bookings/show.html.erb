@@ -1,0 +1,44 @@
+<h2>Show Booking</h2>
+<p>
+
+<table class="table table-striped">
+
+<tr>
+<td>  <strong>No. of seates:</strong></td>
+<td>  <%= @booking.no_of_seates %></td>
+</tr>
+ 
+<tr>
+<td>  <strong>Pickup Date:</strong></td>
+<td>  <%= @booking.pick_up_date %></td>
+</tr>
+ 
+<tr>
+<td>  <strong>Drop Date:</strong></td>
+<td>  <%= @booking.drop_date %></td>
+</tr>
+
+<tr>
+<td>  <strong>Pick-up location:</strong></td>
+<td>  <%= @booking.pick_up_location %></td>
+</tr>
+
+<tr>
+<td>  <strong>Drop location:</strong></td>
+<td>  <%= @booking.drop_location %></td>
+</tr>
+
+<tr>
+<td>  <strong>Pick-up time:</strong></td>
+<td>  <%= @booking.pick_up_time %></td>
+</tr>
+
+</table></p>
+
+<table> <tr><td> <%= link_to "Show History", bookings_path %> </p></td></tr></table>
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>No. of seates</th>
+    <th>Image</th>
+    <th>Milage</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @available_vehicles.each do |av|%>
+
+  <tr>
+    <td><%= av.title %></td>
+    <td><%= av.no_of_seates %></td>
+    <td><%= av.no_of_seates %></td>
+    <td><%= av.milage %></td>
+    <td><%= link_to 'Booking', new_booking_path(:car_id => av.id) , :class => 'btn btn-mini' %></td>
+  </tr>
+  
+<% end %>
+</table>
+
+

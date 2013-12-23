@@ -1,0 +1,52 @@
+<h2> search vechile </h2>
+
+ <%= form_tag(available_vehicles_cars_path ) do  %>
+
+  <%= label_tag(:n, "No fo seates:") %>
+  <%= text_field_tag("search[no_of_seates]") %>
+
+  <%= label_tag(:p, "Pick up Date:") %>
+  <%= date_field(:search, :pick_up_date) %>
+
+  <%= label_tag(:d, "Drop Date:") %>
+  <%= date_field(:search, :drop_date) %>
+
+  <%= submit_tag("Search", :onclick => "return showdata();" ) %>
+  <% end %>
+
+<script>
+function showdata(){
+ $.ajax({
+          type: "POST",
+          url: "/cars/available_vehicles",
+        
+          success: function (response) {
+          $("#harsh").html(response)
+
+          }
+      });
+return false
+}
+</script>
+
+<div id="harsh">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

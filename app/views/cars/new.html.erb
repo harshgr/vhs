@@ -1,8 +1,7 @@
-<h2>Car</h2>
+<h2>Car</h2>  
 
-   <%= form_for :car, url: cars_path do |f| %>
+<%= form_for @car  do |f| %>
    
-
   <div><%= f.label :Title %><br />
   <%= f.text_field :title, :autofocus=> true , :required => true%></div>
 
@@ -10,7 +9,8 @@
   <%= f.text_field :no_of_seates, :autofocus=> true , :required => true%></div>
   
   <div><%= f.label :Image %><br />
-  <%= f.text_field :image, :autofocus=> true , :required => true%></div>  
+  <%= f.file_field :image %>
+ 
 
   <div><%= f.label :Milage %><br />
   <%= f.text_field :milage, :autofocus=> true , :required => true%></div> 
