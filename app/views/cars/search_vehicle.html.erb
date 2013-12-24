@@ -1,6 +1,6 @@
 <h2> search vechile </h2>
 
- <%= form_tag(available_vehicles_cars_path ) do  %>
+<%= form_tag(available_vehicles_cars_path ) do  %>
 
   <%= label_tag(:n, "No fo seates:") %>
   <%= text_field_tag("search[no_of_seates]") %>
@@ -14,20 +14,17 @@
   <%= submit_tag("Search", :onclick => "return showdata();" ) %>
   <% end %>
 
-<script>
-function showdata(){
- $.ajax({
+  <script>
+    function showdata(){
+    $.ajax({
           type: "POST",
           url: "/cars/available_vehicles",
-        
           success: function (response) {
-          $("#harsh").html(response)
-
-          }
+          $("#harsh").html(response)   }
       });
-return false
-}
-</script>
+    return false
+    }
+  </script>
 
 <div id="harsh">
 </div>

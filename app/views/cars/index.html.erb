@@ -3,7 +3,7 @@
   <tr>
     <th>Title</th><th></th>
     <th>No. of seates</th><th></th>
-    <th>Image</th><th></th>
+    <!--<th>Image</th><th></th>-->
     <th>Milage</th><th></th>
     <th>Registration no</th><th></th>
     <th></th>
@@ -11,11 +11,11 @@
     <th></th>
   </tr>
  
-<% @cars.each do |car| %>
+  <% @cars.each do |car| %>
   <tr>
     <td><%= car.title %></td><th></th>
     <td><%= car.no_of_seates %></td><th></th>
-    <td><%= car.image %></td><th></th>
+    <td><%= image_tag(car.image) %></td><th></th
     <td><%= car.milage %></td><th></th>
     <td><%= car.registration_no %></td><th></th>
    	

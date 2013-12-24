@@ -1,18 +1,18 @@
 <h2> Show Booking history </h2>
 <table class="table table-striped">
-  <tr>
+    <tr>
     <th>Pickup Date</th><th></th>
     <th>Drop Date</th><th></th>
     <th>Pick-up location</th><th></th>
     <th>Drop location</th><th></th>
     <th>Pick-up time</th><th></th>
-   <th></th>
     <th></th>
     <th></th>
-  </tr>
+    <th></th>
+    </tr>
  
-<% @bookings.each do |booking| %>
-  <tr>
+   <% @bookings.each do |booking| %>
+    <tr>
     <td><%= booking.pick_up_date %></td><th></th>
     <td><%= booking.drop_date %></td><th></th>
     <td><%= booking.pick_up_location %></td><th></th>
@@ -21,8 +21,8 @@
     <th></th> 
     <td><%= link_to 'Show', booking_path(booking) %></td>
     <td><%= link_to 'Delete', booking_path(booking), method: :delete, data:{confirm: 'Are you sure!'} %> </td>
-  </tr>
-<% end %>
+    </tr>
+   <% end %>
 </table>
 
    

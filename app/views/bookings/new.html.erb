@@ -1,7 +1,6 @@
 <h2>Booking </h2>
 
-   <%= form_for :booking, url: bookings_path do |f| %>
- 
+<%= form_for :booking, url: bookings_path do |f| %>
    
   <%= f.hidden_field :car_id,  :value => @car.id %>
 
