@@ -46,45 +46,52 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-   
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
+         
         <div class="container-fluid">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Vhs</a>
+          
+         <!-- <a class="brand" href='new_user_session_path'></a>Vhs</a> -->
+          <% if user_signed_in? %>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Search Vehicle", search_vehicle_cars_path  %></li>
               <li><%= link_to "Show Booking history",bookings_path  %></li>
-<!--                  <% if can? :update, @car %> -->
-              <li><%= link_to "Car", new_car_path  %></li>
-              <li><%= link_to "Car Details", cars_path  %></li>
+              <% if current_user && current_user.isadmin %>
+                <li><%= link_to "Car", new_car_path  %></li>
+                <li><%= link_to "Car Details", cars_path  %></li>
             </ul>
+             <% end %>
           </div><!--/.nav-collapse -->
+          </div>
+         
         </div>
       </div>
-    </div>
-
+       <% end %>
     <div class="container-fluid">
       <div class="row-fluid">
+        <% if user_signed_in? %>
         <div class="span3">
-	
- 
           <div class="well sidebar-nav">
+            
             <ul class="nav nav-list">          
-		 <li class="nav-header">Sidebar</li>
-                        <li><%= link_to "Search Vehicle", search_vehicle_cars_path  %></li>
-		        <li><%= link_to "Show Booking history",bookings_path  %></li>		        
-			<li><%= link_to "Car", new_car_path  %></li>
-              		<li><%= link_to "Car Details", cars_path  %></li>
-			
-		</ul>
-            </div><!--/.well -->
-         </div><!--/span-->
+              <li class="nav-header">Sidebar</li>
+                <li><%= link_to "Search Vehicle", search_vehicle_cars_path  %></li>
+                <li><%= link_to "Show Booking history",bookings_path  %></li>    
+                  <% if current_user && current_user.isadmin %>     
+                    <li><%= link_to "Car", new_car_path  %></li>
+                    <li><%= link_to "Car Details", cars_path  %></li>
+                  <% end %>
+            </ul>
+            <% end %>
+          </div><!--/.well -->
+        </div><!--/span-->
+        
         <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>
@@ -93,8 +100,6 @@
       <footer>
         <p>&copy; Company 2013</p>
       </footer>
-
     </div> <!-- /container -->
-
   </body>
 </html>

@@ -1,37 +1,32 @@
 class Ability
   include CanCan::Ability
 
-  #def initialize(user)
-   # user || User.new
-
-   # if user.login? :admin
-   #   can :manage, :all
-   # else
-      #can :show, :all
-   #   can :create, Booking
-   #   can :destroy, Booking   
-   # end
-
   def initialize(user)
-    if user.admin?
+    user || User.new
+
+    if user.isadmin
       can :manage, :all
-     else
-      can :read, :all
-    end
-  end
+    else
       
-    if user.login?(:email)
-        can :create, Car  
-        can :update, Car do |car|
-        car.try(:user) == user
+      can :create,  Booking
+      can :destroy, Booking   
     end
-  end
 
-
-
-
-
-
+  #def initialize(user)
+  #  if user.admin?
+  #     can :manage, :all
+  #  else
+  #     can :read, :all
+  #  end
+  #end
+      
+    # if user.login?(:user)
+    #    can :create, Car  
+    #    can :update, Car do |car|
+    #    car.try(:user) == user
+    # end
+ end
+end
 
 
 
@@ -61,5 +56,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
-  end
-end
+  #end
+#end

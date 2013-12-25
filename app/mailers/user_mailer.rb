@@ -6,5 +6,12 @@ class UserMailer < ActionMailer::Base
     # @url  = 'http://example.com/login'
     mail(to: @user.email, subject: 'Welcome to Vehicle Hiering System')
   end
+  
+  def booking_email(user)
+    @user = user
+    mail(to: @user.email, subject: 'Your booking status is')
+  end
+  
+  
 
 end

@@ -2,23 +2,23 @@ class CarsController < ApplicationController
 
 before_filter :authenticate_user!
 
-load_and_authorize_resource :nested => :car
-
   def new
     @car = Car.new
+    authorize! :create, @car
   end
 
   def create
     @car = Car.new(car_params) 
     if @car.save
-	    redirect_to @car
-	  else
-	  render 'new'
-	  end
+      redirect_to @car
+    else
+    render 'new'
+    end
   end
 
   def show
     @car = Car.find(params[:id])
+    authorize! :read, @car
   end
 
   def index
@@ -26,16 +26,17 @@ load_and_authorize_resource :nested => :car
   end
 
   def edit
-    @car = Car.find(params[:id])	
+    @car = Car.find(params[:id])
+    authorize! :edit, @car
   end
 
   def update
     @car = Car.find(params[:id])
-	  if @car.update(car_params)  
-	    redirect_to @car
-	  else 
-     	render text:wrong
-	  end
+    if @car.update(car_params)  
+      redirect_to @car
+    else 
+      render text:wrong
+    end
   end
 
   def destroy
@@ -43,10 +44,6 @@ load_and_authorize_resource :nested => :car
     @car.destroy
     redirect_to cars_path
   end
-
-  def search_vehicle
-
-  end 
 
   def available_vehicles
     @available_vehicles = Car.all
