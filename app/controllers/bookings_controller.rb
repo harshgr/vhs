@@ -4,7 +4,6 @@ before_filter :authenticate_user!
   def new
     @booking = Booking.new
     @car = Car.find(params[:car_id])
-     
   end
  
   def create
@@ -22,14 +21,27 @@ before_filter :authenticate_user!
     @booking = Booking.find(params[:id])
   end  
 
+  def showindex
+    
+  end
+  
   def index
-    @bookings = Booking.all
+    if current_user && current_user.isadmin 
+      @bookings = Booking.all
+    else
+      @user = current_user
+      @bookings = @user.bookings
+    end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path
+  end
+  
+  def gmap
+    @booking =  Booking.find(params[:id])
   end
   
   

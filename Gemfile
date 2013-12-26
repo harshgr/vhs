@@ -20,6 +20,8 @@ gem 'carrierwave'
 
 gem 'cancan'
 
+gem 'gmaps4rails'
+
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 

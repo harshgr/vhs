@@ -1,9 +1,23 @@
 <h2>booking status </h2>
 <div>
-  <table>
+  <table border = "1">
+    <tr>
+      <th>  Name </th>
+      <th>  Pick up Location </th>
+      <th>  Drop Location </th>
+      <th>  Pick Time </th>
+      <th>  Pick Up Date </th>
+      <th>  Drop Date </th>
+    </tr>
+      <% @user.bookings.each do |av| %>
     <tr>
       <td><%= @user.fname%></td>
-      <td>
+      <td> <%= av.pick_up_location  %> </td>
+       <td> <%= av.drop_location  %> </td>
+       <td> <%= av.pick_up_time  %> </td>
+       <td> <%= av.pick_up_date  %> </td>
+       <td> <%= av.drop_date  %> </td>
+      <%end%>
     </tr>
   </table> 
 </div>

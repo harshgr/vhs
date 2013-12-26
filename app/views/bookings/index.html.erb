@@ -9,8 +9,9 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
     </tr>
- 
+
    <% @bookings.each do |booking| %>
     <tr>
     <td><%= booking.pick_up_date %></td><th></th>
@@ -20,7 +21,9 @@
     <td><%= booking.pick_up_time %></td><th></th>
     <th></th> 
     <td><%= link_to 'Show', booking_path(booking) %></td>
+    <td><%= link_to 'See Map',gmap_booking_path(booking) %></td>
     <td><%= link_to 'Delete', booking_path(booking), method: :delete, data:{confirm: 'Are you sure!'} %> </td>
+    
     </tr>
    <% end %>
 </table>

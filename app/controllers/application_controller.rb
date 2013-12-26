@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, :alert => exception.message
    end
    
+   
   before_filter :configure_permitted_parameters, if: :devise_controller?
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
@@ -17,4 +18,11 @@ class ApplicationController < ActionController::Base
     u.permit(:email, :password, :password_confirmation,:current_password, :fname, :lname, :dob, :mobile, :gender, :address, :city)
     end
   end  
+  
+  #@users = User.all
+  #@hash = Gmaps4rails.build_markers(@users) do |user, marker|
+  #marker.lat user.latitude # :pick_up_location
+  #marker.lng user.longitude # :drop_location
+  #end
+  
 end
