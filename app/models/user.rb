@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
 
     validates :email, uniqueness: true, on: :create
     
-    
+    validates :mobile, numericality: true ,length: { is: 10}
        
 end

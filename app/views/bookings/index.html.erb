@@ -11,7 +11,7 @@
     <th></th>
     <th></th>
     </tr>
-
+   <%= will_paginate @bookings %>
    <% @bookings.each do |booking| %>
     <tr>
     <td><%= booking.pick_up_date %></td><th></th>

@@ -22,7 +22,7 @@ before_filter :authenticate_user!
   end
 
   def index
-    @cars = Car.all
+    @cars = Car.paginate(:page => params[:page], :per_page => 2)
   end
 
   def edit

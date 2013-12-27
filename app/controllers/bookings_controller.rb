@@ -27,10 +27,11 @@ before_filter :authenticate_user!
   
   def index
     if current_user && current_user.isadmin 
-      @bookings = Booking.all
+      @bookings = Booking.paginate(:page => params[:page], :per_page => 9)
+      
     else
       @user = current_user
-      @bookings = @user.bookings
+      @bookings = @user.bookings.paginate(:page => params[:page], :per_page => 9)
     end
   end
 
