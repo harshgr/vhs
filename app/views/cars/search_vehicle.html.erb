@@ -1,37 +1,43 @@
 <h2> search vechile </h2>
 
-<%= form_tag(available_vehicles_cars_path ) do  %>
+
+<%= form_tag(available_vehicles_cars_path, :remote => true ) do  %>
 
   <%= label_tag(:n, "No fo seates:") %>
-  <%= text_field_tag("search[no_of_seates]") %>
+  <%= text_field_tag(:no_of_seates ) %>
 
-  <%= label_tag(:p, "Pick up Date:") %>
-  <%= date_field(:search, :pick_up_date) %>
+  
 
-  <%= label_tag(:d, "Drop Date:") %>
-  <%= date_field(:search, :drop_date) %>
+    <%= label_tag(:p, "Pick up Date:") %>
+    <%= date_field_tag(:pick_up_date)  %>
+  
 
-  <%= submit_tag("Search", :onclick => "return showdata()" ) %>
-  <% end %>
+  
+    <%= label_tag(:d, "Drop Date:") %>
+    <%= date_field_tag(:drop_date)  %>
+  
 
+   <%= submit_tag("Search" ) %>
+
+
+
+   <% end %>
+
+  <div id="sandbox-container" >
+     <div class="input-append date" id="dp3" data-date="01-01-2014" data-date-format="dd-mm-yyyy">
+        <input class="span12" size="18" type="text" value="30-12-2013">
+        <span class="add-on"><i class="icon-th"></i></span>
+     </div>
+ </div>
+    
   <script>
-    function showdata(){
-    $.ajax({
-          type: "POST",
-          url: "/cars/available_vehicles",
-          success: function (response) {
-          $("#harsh").html(response)   }
-      });
-    return false
-    }
+     $('#sandbox-container .input-append.date').datepicker({});
+   
   </script>
-
-<div id="harsh">
+  
+<div id="show">
 </div>
-
-
-
-
+ 
 
 
 

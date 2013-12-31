@@ -6,6 +6,7 @@
     <th>Pick-up location</th><th></th>
     <th>Drop location</th><th></th>
     <th>Pick-up time</th><th></th>
+    <th>Registration no.</th><th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= booking.pick_up_location %></td><th></th>
     <td><%= booking.drop_location %></td><th></th>
     <td><%= booking.pick_up_time %></td><th></th>
+    <td><%= booking.car.registration_no %></td>
     <th></th> 
     <td><%= link_to 'Show', booking_path(booking) %></td>
     <td><%= link_to 'See Map',gmap_booking_path(booking) %></td>

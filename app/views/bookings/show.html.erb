@@ -27,6 +27,15 @@
     <td>  <%= @booking.pick_up_time %></td>
   </tr>
 
+  <tr>
+    <td>  <strong>Registration no:</strong></td>
+    <td>  <%= @booking.car.registration_no %></td>
+  </tr>
+
+ <tr>
+    <td>  <strong>Registration no:</strong></td>
+    <td>  <%= image_tag(@booking.car.image)%></td>
+  </tr>
 </table></p>
 
 <table> <tr><td> <%= link_to "Show History", bookings_path %> </p></td></tr></table>

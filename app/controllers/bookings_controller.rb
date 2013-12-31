@@ -2,14 +2,17 @@ class BookingsController < ApplicationController
 before_filter :authenticate_user! 
 
   def new
+
     @booking = Booking.new
     @car = Car.find(params[:car_id])
   end
  
   def create
     @booking = current_user.bookings.new(booking_params)
+    @booking.pick_up_date = session[:pick_up_date]
+    @booking.drop_date = session[:drop_date]
     if @booking.save
-     @user = current_user
+      @user = current_user
       UserMailer.booking_email(@user).deliver
       redirect_to @booking
     else
@@ -27,11 +30,11 @@ before_filter :authenticate_user!
   
   def index
     if current_user && current_user.isadmin 
-      @bookings = Booking.paginate(:page => params[:page], :per_page => 9)
+      @bookings = Booking.paginate(:page => params[:page], :per_page => 8)
       
     else
       @user = current_user
-      @bookings = @user.bookings.paginate(:page => params[:page], :per_page => 9)
+      @bookings = @user.bookings.paginate(:page => params[:page], :per_page => 8)
     end
   end
 
