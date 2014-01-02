@@ -47,6 +47,7 @@ before_filter :authenticate_user!
 
  
   def available_vehicles
+  
   session[:pick_up_date] = params[:pick_up_date]
   session[:drop_date] = params[:drop_date]
   #params[:no_of_seates]

@@ -24,6 +24,9 @@ gem 'gmaps4rails'
 
 gem 'will_paginate', '~> 3.0'
 
+gem 'activemerchant'
+
+
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 

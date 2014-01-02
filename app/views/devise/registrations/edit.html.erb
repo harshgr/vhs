@@ -26,8 +26,13 @@
   <div><%= f.label :lname,"Last_Name" %><br />
   <%= f.text_field :lname, :autofocus=> true %></div>
   
-  <div><%= f.label :dob,"Date of Birth" %><br />
-  <%= f.date_field :dob, :autofocus=> true %></div>
+  <div id="sandbox-container" >
+     <div class="input-append date" id="dp3" data-date="01-01-2014" data-date-format="dd-mm-yyyy">
+        <%= f.label :dob,"Date of Birth" %><br />
+        <%= f.text_field :dob, :autofocus=> true ,:required => true %>
+        <span class="add-on"><i class="icon-th"></i></span>
+     </div>
+  </div>
   
   <div><%= f.label :Mobile%><br />
   <%= f.text_field :mobile , :autofocus=> true  %></div>
@@ -57,3 +62,7 @@
 
   <%= link_to "Back", :back %>
 </div>
+<script>
+     $('#sandbox-container .input-append.date').datepicker({});
+   
+  </script>
