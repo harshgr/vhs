@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
 before_filter :authenticate_user! 
 
   def new
-
     @booking = Booking.new
     @car = Car.find(params[:car_id])
   end
@@ -11,10 +10,12 @@ before_filter :authenticate_user!
     @booking = current_user.bookings.new(booking_params)
     @booking.pick_up_date = session[:pick_up_date]
     @booking.drop_date = session[:drop_date]
+     
     if @booking.save
+    
       @user = current_user
       UserMailer.booking_email(@user).deliver
-      redirect_to @booking
+      redirect_to payment_booking_path(@booking)
     else
       render 'new'
     end
@@ -24,8 +25,8 @@ before_filter :authenticate_user!
     @booking = Booking.find(params[:id])
   end  
 
-  def showindex
-    
+  def payment
+    @booking = Booking.find(params[:id])
   end
   
   def index
@@ -60,7 +61,7 @@ before_filter :authenticate_user!
 
   private 
   def booking_params
-    params.require(:booking).permit(:no_of_seates, :pick_up_date, :user_id, :car_id, :drop_date, :pick_up_location, :pick_up_time, :drop_location)
+    params.require(:booking).permit(:no_of_seates, :total_cost, :pick_up_date, :user_id, :car_id, :drop_date, :pick_up_location, :pick_up_time, :drop_location)
   end
   
 end

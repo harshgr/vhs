@@ -8,6 +8,9 @@
   <div><%= f.label :no_of_seates,"No. of seates" %><br />
   <%= f.text_field :no_of_seates, :autofocus=> true , :required => true%></div>
   
+  <div><%= f.label :cost_per_day,"Cost per day" %><br />
+  <%= f.text_field :cost_per_day, :autofocus=> true, :placeholder => "Please fill the Per day cost", :required => true %></div>
+  
   <div><%= f.label :Image %><br />
   <%= f.file_field :image %>
 

@@ -1,12 +1,17 @@
 <h2>Booking </h2>
 
 <%= form_for :booking, url: bookings_path do |f| %>
-   
+  
   <%= f.hidden_field :car_id,  :value => @car.id %>
+  
+  <%= f.hidden_field :cost_per_day,  :value => @car.cost_per_day %>
+
+  <div><%= f.label :total_cost,"Total cost" %><br />
+  <%= f.text_field :total_cost, :readonly => true, :class=>"abc" , :value => price(session[:pick_up_date],  session[:drop_date], @car.cost_per_day) %></div>
 
   <div><%= f.label :pick_up_location,"Pick-up location" %><br />
   <%= f.text_field :pick_up_location, :autofocus=> true , :required => true, :class=>"abc", :placeholder=> "From" %></div>
-  
+
     
   <div id="datetimepicker3" class="input-append">
    <%= f.label :pick_up_time,"Pick-up time" %><br />
@@ -19,7 +24,7 @@
   <div><%= f.label :drop_location,"Drop location" %><br />
   <%= f.text_field :drop_location, :autofocus=> true , :required => true, :class=>"abc", :placeholder=> "To"%></div>  
 
-  <div><%= f.submit %></div>
+  <div><%= f.submit("Next") %></div>
  
  <% end %>
 

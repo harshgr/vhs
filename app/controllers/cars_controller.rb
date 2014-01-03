@@ -69,6 +69,6 @@ before_filter :authenticate_user!
 
   private
   def car_params
-    params.require(:car).permit(:title, :no_of_seates, :image, :milage, :registration_no)
+    params.require(:car).permit(:title, :no_of_seates, :cost_per_day, :image, :milage, :registration_no)
   end
 end

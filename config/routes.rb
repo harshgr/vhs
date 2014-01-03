@@ -21,7 +21,7 @@ Vhs::Application.routes.draw do
   resources :bookings do
     member do 
       get :gmap
-      get :showindex
+      get :payment
     end
   end
   
