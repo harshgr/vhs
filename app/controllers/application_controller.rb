@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     
     protect_from_forgery with: :exception
   
-  #filter_parameter_logging :card_number, :card_verification
+    #filter_parameter_logging :card_number, :card_verification
   
      
     rescue_from CanCan::AccessDenied do |exception|
@@ -22,11 +22,5 @@ class ApplicationController < ActionController::Base
       u.permit(:email, :password, :password_confirmation,:current_password, :fname, :lname, :dob, :mobile, :gender, :address, :city)
     end
   end  
-  
-  #@users = User.all
-  #@hash = Gmaps4rails.build_markers(@users) do |user, marker|
-  #marker.lat user.latitude # :pick_up_location
-  #marker.lng user.longitude # :drop_location
-  #end
   
 end

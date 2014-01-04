@@ -3,13 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
- #   attr_accessible :email, :password, :password_confirmation
+ 
 
-    has_many :bookings, dependent: :destroy
-    has_many :cars , through: :bookings
+  has_many :bookings, dependent: :destroy
+  has_many :cars , through: :bookings
 
-    validates :email, uniqueness: true, on: :create
-    
-    validates :mobile, numericality: true ,length: { is: 10}
+  validates :email, uniqueness: true, on: :create
+  validates :mobile, numericality: true ,length: { is: 10}
        
 end

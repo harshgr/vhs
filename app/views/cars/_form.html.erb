@@ -1,0 +1,43 @@
+<%= form_for @car do |f| %>
+
+  <div>
+    <%= f.label :Title %>
+    <br />
+    <%= f.text_field :title, :autofocus=> true , :required => true, :placeholder => "Please fill the car name" %>
+  </div>
+
+  <div>
+    <%= f.label :no_of_seates,"No. of seates" %>
+    <br />
+    <%= f.text_field :no_of_seates, :autofocus=> true , :required => true , :placeholder => "Select 4,5,6,7,8,9,10 seator"%>
+  </div>
+  
+  <div>
+    <%= f.label :cost_per_day,"Cost per day" %>
+    <br />
+    <%= f.text_field :cost_per_day, :autofocus=> true, :placeholder => "Please fill the Per day cost", :required => true %>
+  </div>
+  
+  <div>
+    <%= f.label :Image %>
+    <br />
+    <%= f.file_field :image , :required=>true ,:autofocus=> true %>
+  </div>
+ 
+  <div>
+    <%= f.label :Milage %>
+    <br />
+    <%= f.text_field :milage, :autofocus=> true , :placeholder => "Please fill the milage of the car", :required => true%>
+  </div> 
+
+  <div>
+    <%= f.label :registration_no,"Registration no." %>
+    <br />
+    <%= f.text_field :registration_no, :autofocus=> true, :placeholder => "Please fill the registration no.", :required => true %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

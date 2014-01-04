@@ -6,19 +6,19 @@
   <%= devise_error_messages! %>
 
   <div><%= f.label :Email %><br />
-  <%= f.email_field :email ,:required => true, :autofocus => true, :placeholder => "abc@mailnator.com" , :class=>"abc" , :class=>"abc"%></div>
+  <%= f.email_field :email ,:required => true, :autofocus => true, :placeholder => "happy@mailnator.com" , :class=>"fix_textbox" %></div>
 
   <div><%= f.label :Password %><br />
-  <%= f.password_field :password ,:required => true, :autofocus => true, :placeholder => "Passwod should be minimum 8 char." , :class=>"abc" %></div>
+  <%= f.password_field :password ,:required => true, :autofocus => true, :placeholder => "Passwod should be minimum 8 char." , :class=>"fix_textbox" %></div>
 
   <div><%= f.label :Password_Confirmation %><br />
-  <%= f.password_field :password_confirmation ,:required => true , :autofocus => true, :placeholder => "Passwod should be minimum 8 char.", :class=>"abc"%></div>
+  <%= f.password_field :password_confirmation ,:required => true , :autofocus => true, :placeholder => "Passwod should be minimum 8 char.", :class=>"fix_textbox"%></div>
 
   <div><%= f.label :fname,"First Name" %><br />
-  <%= f.text_field :fname, :autofocus=> true ,:required => true, :placeholder => "Please fill the First-Name" , :class=>"abc"%></div>
+  <%= f.text_field :fname, :autofocus=> true ,:required => true, :placeholder => "Please fill the First-Name" , :class=>"fix_textbox"%></div>
   
   <div><%= f.label :lname,"Last_Name" %><br />
-  <%= f.text_field :lname, :autofocus=> true , :required => true, :placeholder => "Please fill the Last-Name" , :class=>"abc"%></div>
+  <%= f.text_field :lname, :autofocus=> true , :required => true, :placeholder => "Please fill the Last-Name" , :class=>"fix_textbox"%></div>
   
   <div id="sandbox-container" >
      <div class="input-append date" id="dp3" data-date="01-01-2014" data-date-format="dd-mm-yyyy">
@@ -29,7 +29,7 @@
  </div>
   
   <div><%= f.label :Mobile%><br />
-  <%= f.text_field :mobile , :autofocus=> true, :required => true ,:placeholder => "Mobile no. should be  10 digits", :class=>"abc" %></div>
+  <%= f.text_field :mobile , :autofocus=> true, :required => true ,:placeholder => "Mobile no. should be  10 digits", :class=>"fix_textbox" %></div>
   
   <div >
     <table>  
@@ -43,10 +43,10 @@
 
     
   <div><%= f.label :Address%><br />
-  <%= f.text_field :address, :autofocus=> true, :required => true , :placeholder => "Please fill the current addesss", :class=>"abc"%></div>
+  <%= f.text_field :address, :autofocus=> true, :required => true , :placeholder => "Please fill the current addesss", :class=>"fix_textbox"%></div>
   
   <div><%= f.label :City%><br />
-  <%= f.text_field :city, :autofocus=> true ,:required => true ,:placeholder => "Please fill the city", :class=>"abc"%></div>
+  <%= f.text_field :city, :autofocus=> true ,:required => true ,:placeholder => "Please fill the city", :class=>"fix_textbox"%></div>
   
   <div><%= f.submit "Sign up"  %></div>
 
