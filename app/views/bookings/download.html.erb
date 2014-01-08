@@ -1,0 +1,85 @@
+<center>
+  <h2>Booking</h2>
+  <style>
+    td,th
+    { 
+      width: 200px
+    }
+  </style>
+
+<table ><hr/> </table>
+<table >
+
+  <tr>
+    <td>  <strong>Name:</strong></td>
+    <td>  <%= @name.fname %> <%=@name.lname %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>Pickup Date:</strong></td>
+    <td>  <%= @booking.pick_up_date %></td>
+  </tr>
+  
+  <tr>
+    <td>  <strong>Drop Date:</strong></td>
+    <td>  <%= @booking.drop_date %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>Pick-up time:</strong></td>
+    <td>  <%= @booking.pick_up_time %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>From:</strong></td>
+    <td>  <%= @booking.pick_up_location %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>To:</strong></td>
+    <td>  <%= @booking.drop_location %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>Car name:</strong></td>
+    <td>  <%= @car.title%></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>No of seates:</strong></td>
+    <td>  <%= @car.no_of_seates %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>Milage:</strong></td>
+    <td>  <%= @car.milage %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>Cost per-day:</strong></td>
+    <td>  <%= @car.cost_per_day %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>Registration no:</strong></td>
+    <td>  <%= @car.registration_no %></td>
+  </tr>
+  </table>
+
+<table><hr/><hr/></table>
+
+  <table>
+      <td><strong>Total price:</strong></td>
+      <td><strong ><%= @booking.total_cost  %><strong></td>
+   </table>
+   
+<table><hr/><hr/></table>
+</center>   
+
+
+
+
+
+
+
+

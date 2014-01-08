@@ -23,6 +23,7 @@ gem 'cancan'
 gem 'will_paginate', '~> 3.0'
 
 gem 'pdfkit'
+
 gem 'wkhtmltopdf-binary'
 
 gem 'activemerchant'

@@ -20,7 +20,7 @@ Vhs::Application.routes.draw do
   
   resources :bookings do
     member do
-      
+      get :download
       get :fill_payment_detail
       post :complete
            
@@ -29,8 +29,11 @@ Vhs::Application.routes.draw do
   
   resources :cars do 
     collection do
-      get :search_vehicle
+      get  :search_vehicle
       post :available_vehicles
+    end
+    member do
+      get  :booked_history
     end
   end
 

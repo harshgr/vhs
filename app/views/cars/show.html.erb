@@ -32,11 +32,7 @@
   </tr>
 </table>
 
-<table>
-  <tr>
-    <td><%= link_to "Car Details", cars_path  %></td><td><th></th><th></th><th></th>
-    <td><%= link_to "New Car", new_car_path  %></td>
-  </tr>
-</table> 
+<p><%= link_to 'booked_history', booked_history_car_path(@car), :remote => true, :class => 'btn btn-mini'%> </p>
 
-
+<div id="show">
+</div>

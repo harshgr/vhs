@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :set_car, :only => [:show, :edit, :update, :destroy]
+  before_filter :set_car, :only => [:show, :edit, :update, :destroy, :booked_history ]
 
   def new
     @car = Car.new
@@ -45,7 +45,6 @@ class CarsController < ApplicationController
     redirect_to cars_path
   end
 
- 
   def available_vehicles
   
     session[:pick_up_date] = params[:pick_up_date]
@@ -56,6 +55,11 @@ class CarsController < ApplicationController
     @available_vehicles = @all_vehicles - @booked_vehicles
   end
 
+  def booked_history
+     @booked_vehicle = Booking.where(:car_id => params[:id])
+  end
+
+  
   private
   def car_params
     params.require(:car).permit(:title, :no_of_seates, :cost_per_day, :image, :milage, :registration_no)

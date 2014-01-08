@@ -4,7 +4,7 @@ require 'active_merchant'
 
 
   before_filter :authenticate_user!
-  before_filter :set_booking, :only => [:show, :payment, :destroy]
+  before_filter :set_booking, :only => [:show, :payment, :destroy, :download]
 
   def new
     @booking = Booking.new
@@ -29,10 +29,17 @@ require 'active_merchant'
     end
   end
 
-  def show
+  def download
+    @name =current_user
     @car = @booking.car
+    kit = PDFKit.new(render_to_string(:action => "download", :layout => false))
+    send_data(kit.to_pdf, :filename => "booking.pdf", :type => "application/pdf") 
   end
 
+  def show
+    @name =current_user
+    @car = @booking.car
+  end
 
   def fill_payment_detail
   end

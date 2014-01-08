@@ -1,0 +1,22 @@
+<h2>Booked history</h2>
+<table class="table table-striped">
+    <tr>
+      <th>Pick up date</th>
+      <th>Drop date</th>
+      <th>Pick up location</th>
+      <th>drop location</th>
+      <th>Pick-up time</th>
+     
+    </tr>
+    <% @booked_vehicle.each do |buk|%>
+      <tr>
+        <td><%= buk.pick_up_date%></td>
+        <td><%= buk.drop_date %></td>
+        <td><%= buk.pick_up_location %></td>
+        <td><%= buk.drop_location %></td>
+        <td><%= buk.pick_up_time %></td>
+        
+      </tr>
+    <% end %>
+</table>
+

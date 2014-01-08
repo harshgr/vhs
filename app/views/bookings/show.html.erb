@@ -1,5 +1,11 @@
 <h2>Show Booking</h2>
+<p id="pdf_link"><%= link_to "Download Ticket", download_booking_path(@booking), :class => 'btn btn-mini' %></p>
 <p><table class="table table-striped">
+
+  <tr>
+    <td>  <strong>Name:</strong></td>
+    <td>  <%= @name.fname %> <%=@name.lname %></td>
+  </tr>
 
   <tr>
     <td>  <strong>Pickup Date:</strong></td>
@@ -27,13 +33,13 @@
   </tr>
 
   <tr>
-    <td>  <strong>Total price</strong></td>
-    <td>  <%= @booking.total_cost %></td>
-  </tr>
-  
-  <tr>
     <td>  <strong>Registration no:</strong></td>
     <td>  <%= @car.registration_no %></td>
+  </tr>
+
+  <tr>
+    <td>  <strong>Total price</strong></td>
+    <td>  <%= @booking.total_cost %></td>
   </tr>
   
  <tr>
@@ -42,9 +48,9 @@
   </tr>
 </table></p>
 
-<table> <tr><td> <%= link_to "Show History", bookings_path %> </p></td></tr></table>
 
-<p id="pdf_link"><%= link_to "Download Invoice (PDF)", booking_path(@booking, :format => "pdf") %></p>
+
+
 
 
 
