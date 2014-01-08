@@ -47,8 +47,10 @@ class CarsController < ApplicationController
 
  
   def available_vehicles
+  
     session[:pick_up_date] = params[:pick_up_date]
     session[:drop_date] = params[:drop_date]
+    
     @booked_vehicles = Car.joins(:bookings).where(:no_of_seates => params[:no_of_seates]).where("date(bookings.pick_up_date) BETWEEN ? AND ? OR date(bookings.drop_date) BETWEEN ? AND ? ", params[:pick_up_date] ,params[:drop_date],params[:pick_up_date] ,params[:drop_date])
     @all_vehicles = Car.where(:no_of_seates => params[:no_of_seates]) 
     @available_vehicles = @all_vehicles - @booked_vehicles

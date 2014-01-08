@@ -14,7 +14,8 @@
       <td><%= av.cost_per_day %></td>
       <td><%= av.registration_no %></td>
       <td><%= av.milage %></td>
-      <td><%= link_to 'Booking', new_booking_path(:car_id => av.id) , :class => 'btn btn-mini' %></td>
+      
+      <td><%= link_to 'Booking', new_booking_path(:car_id => av.id) , :class => 'btn btn-mini'%></td>
     </tr>
   <% end %>
 </table>

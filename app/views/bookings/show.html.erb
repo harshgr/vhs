@@ -37,13 +37,14 @@
   </tr>
   
  <tr>
-    <td>  <strong>Registration no:</strong></td>
+    <td>  <strong>Image:</strong></td>
     <td>  <%= image_tag(@car.image)%></td>
   </tr>
 </table></p>
 
 <table> <tr><td> <%= link_to "Show History", bookings_path %> </p></td></tr></table>
 
+<p id="pdf_link"><%= link_to "Download Invoice (PDF)", booking_path(@booking, :format => "pdf") %></p>
 
 
 

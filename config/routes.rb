@@ -19,9 +19,11 @@ Vhs::Application.routes.draw do
   resources :users
   
   resources :bookings do
-    member do 
-      get :gmap
-      get :payment
+    member do
+      
+      get :fill_payment_detail
+      post :complete
+           
     end
   end
   
@@ -30,9 +32,7 @@ Vhs::Application.routes.draw do
       get :search_vehicle
       post :available_vehicles
     end
-  end                     
-
-
+  end
 
   # Example resource route with options:
   #   resources :products do

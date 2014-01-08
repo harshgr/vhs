@@ -1,19 +1,16 @@
 <h2>Booking </h2>
 
-<%= form_for :booking, url: bookings_path do |f| %>
+<%= form_for :booking, url: bookings_path  do |f| %>
 
   <%= f.hidden_field :car_id,  :value => @car.id %>
-
-  
-  
   
   <div>
-    <%= f.label :pick_up_location,"Pick-up location" %><br />
+    <%= f.label :pick_up_location,"Pick-up location" %>
     <%= f.text_field :pick_up_location, :autofocus=> true , :required => true, :class=>"fix_textbox", :placeholder=> "From" %>
   </div>
 
   <div id="datetimepicker3" class="input-append">
-    <%= f.label :pick_up_time,"Pick-up time" %><br />
+    <%= f.label :pick_up_time,"Pick-up time" %>
     <%= f.text_field :pick_up_time, :autofocus=> true, :required => true, :placeholder=>"please fill time - 24 hours" ,"data-format"=>"hh:mm:ss"  %>
     <span class="add-on">
       <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
@@ -21,7 +18,7 @@
   </div>
 
   <div>
-    <%= f.label :drop_location,"Drop location" %><br />
+    <%= f.label :drop_location,"Drop location" %>
     <%= f.text_field :drop_location, :autofocus=> true , :required => true, :class=>"fix_textbox", :placeholder=> "To"%>
   </div>  
 
@@ -41,3 +38,4 @@
 
 
  
+

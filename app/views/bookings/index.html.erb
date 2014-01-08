@@ -6,7 +6,7 @@
       <th>Pick-up location</th><th></th>
       <th>Drop location</th><th></th>
       <th>Pick-up time</th><th></th>
-      <th>Registration no.</th><th></th> <th></th> <th></th> <th></th> <th></th>
+      <th>Registration no.</th><th></th> <th></th> <th></th> 
     </tr>
 
   <%= will_paginate @bookings %>
@@ -21,7 +21,7 @@
         <td><%= booking.car.registration_no %></td>
         <th></th> 
         <td><%= link_to 'Show', booking_path(booking) %></td>
-        <td><%= link_to 'See Map',gmap_booking_path(booking) %></td>
+         
         <td><%= link_to 'Delete', booking_path(booking), method: :delete, data:{confirm: 'Are you sure!'} %> </td>
       </tr>
     <% end %>

@@ -1,0 +1,40 @@
+<h1>pay now<h1>
+
+<%= form_tag(complete_booking_path(:id)) do  %>
+
+  <div>
+    <%= label_tag(:first_name, "First Name:") %>
+    <%= text_field_tag(:first_name, nil, :placeholder => "Please fill the first name", :autofocus=> true , :required => true, :class => "fix_textbox"  )%>
+  </div>
+
+  <div>
+    <%= label_tag(:last_name, "Last Name") %>
+    <%= text_field_tag(:last_name, nil, :placeholder => "Please fill the first name", :autofocus=> true , :required => true, :class => "fix_textbox"  )%>
+  </div>
+  
+  <div>
+    <%= label_tag(:number,"Number") %>
+    <%= text_field_tag(:number, nil, :placeholder => "Fill the card no.", :autofocus=> true , :required => true, :class => "fix_textbox"  )%>
+  </div>
+  
+  <div>
+    <%= label_tag(:month,"Month") %>
+    <%= text_field_tag(:month, nil, :placeholder => "card_expires_on.month", :autofocus=> true , :required => true, :class => "fix_textbox"  )%>
+  </div>
+ 
+  <div>
+    <%= label_tag(:year,"Year") %>
+    <%= text_field_tag(:year, nil, :size => 4,:placeholder => "card_expires_on.year", :autofocus=> true , :required => true, :class => "fix_textbox"  )%>
+  </div> 
+
+  <div>
+    <%= label_tag(:verification_value, "Verification Value") %>
+    <%= text_field_tag(:verification_value, nil, :placeholder => "Fill the year", :autofocus=> true , :required => true, :class => "fix_textbox"  )%>
+  </div>
+
+  <div>
+    <%= submit_tag("Ok") %>
+     </div>
+
+<% end %>
+  
