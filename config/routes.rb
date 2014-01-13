@@ -23,7 +23,6 @@ Vhs::Application.routes.draw do
       get :download
       get :fill_payment_detail
       post :complete
-           
     end
   end
   

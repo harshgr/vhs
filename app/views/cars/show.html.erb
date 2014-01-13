@@ -18,7 +18,7 @@
 
   <tr>
     <td>  <strong>Image:</strong></td>
-    <td>  <%= image_tag(@car.image) %></td>
+    <td>  <%= image_tag(@car.image, :class => "fix_image") %></td>
   </tr>
  
   <tr>
@@ -32,7 +32,8 @@
   </tr>
 </table>
 
-<p><%= link_to 'booked_history', booked_history_car_path(@car), :remote => true, :class => 'btn btn-mini'%> </p>
+<p><%= link_to 'booked_history', booked_history_car_path(@car), :remote => true, :class => 'btn btn-mini'%> 
+<%= link_to 'edit', edit_car_path , :class => 'btn btn-mini'%> </p>
 
 <div id="show">
 </div>

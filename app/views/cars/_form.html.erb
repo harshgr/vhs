@@ -1,24 +1,34 @@
-<%= form_for @car do |f| %>
+  <%= form_for @car do |f| %>
+
+  <div>
+    <% if @car.errors.any? %>
+      <h2><%= pluralize(@car.errors.count, "Error") %> Please fill the right value:</h2>
+    <% end %>
+    
+    <% @car.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+
+  <br/>
 
   <div>
     <%= f.label :Title %>
-   
     <%= f.text_field :title, :autofocus=> true , :required => true, :placeholder => "Please fill the car name" %>
   </div>
 
   <div>
     <%= f.label :no_of_seates,"No. of seates" %>
-    <%= f.text_field :no_of_seates, :autofocus=> true , :required => true , :placeholder => "Select 4,5,6,7,8,9,10 seator"%>
+    <%= f.text_field :no_of_seates, :autofocus=> true , :require => true , :placeholder => "Select 4,5,6,7,8,9,10 seator"%>
   </div>
-  
   <div>
     <%= f.label :cost_per_day,"Cost per day" %>
     <%= f.text_field :cost_per_day, :autofocus=> true, :placeholder => "Please fill the Per day cost", :required => true %>
   </div>
-  
+   
   <div>
     <%= f.label :Image %>
-    <%= f.file_field :image , :required=>true ,:autofocus=> true %>
+    <%= f.file_field :image %>
   </div>
  
   <div>
@@ -32,7 +42,9 @@
   </div>
 
   <div>
-    <%= f.submit %>
+    <%= f.submit"submit", :class=>'sbt' %>
   </div>
 
 <% end %>
+
+

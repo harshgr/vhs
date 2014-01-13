@@ -17,7 +17,7 @@
       <td><%= car.title %></td><th></th>
       <td><%= car.no_of_seates %></td><th></th>
       <td><%= car.cost_per_day %></td><th></th>
-      <td><%= image_tag(car.image)    %></td>
+      <td><%= image_tag(car.image, :class=> "fix_image")    %></td>
       <td><%= car.milage %></td><th></th>
       <td><%= car.registration_no %></td>
       <td><%= link_to 'Show', car_path(car) %></td>

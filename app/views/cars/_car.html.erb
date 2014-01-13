@@ -6,16 +6,14 @@
     <th>Registration no.</th>
     <th>Milage</th> <th></th> <th></th>
   </tr>
-
-  <% @available_vehicles.each do |av|%>
+  <% @available_vehicles.each do |vehicle|%>
     <tr>
-      <td><%= av.title %></td>
-      <td><%= av.no_of_seates %></td>
-      <td><%= av.cost_per_day %></td>
-      <td><%= av.registration_no %></td>
-      <td><%= av.milage %></td>
-      
-      <td><%= link_to 'Booking', new_booking_path(:car_id => av.id) , :class => 'btn btn-mini'%></td>
+      <td><%= vehicle.title %></td>
+      <td><%= vehicle.no_of_seates %></td>
+      <td><%= vehicle.cost_per_day %></td>
+      <td><%= vehicle.registration_no %></td>
+      <td><%= vehicle.milage %></td>
+      <td><%= link_to 'Booking', new_booking_path(:car_id => vehicle.id) , :class => 'btn btn-mini'%></td>
     </tr>
   <% end %>
 </table>

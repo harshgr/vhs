@@ -1,6 +1,6 @@
 <h1>pay now<h1>
 
-<%= form_tag(complete_booking_path(:id)) do  %>
+<%= form_tag(complete_booking_path(@booking)) do  %>
 
   <div>
     <%= label_tag(:first_name, "First Name:") %>
@@ -34,7 +34,8 @@
 
   <div>
     <%= submit_tag("Ok") %>
-     </div>
+  </div>
 
 <% end %>
+
   
